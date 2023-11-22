@@ -1,2 +1,22 @@
 
-<h2>This is test4</h2>
+<label>Name Your Server</label>
+
+<input type="text" 
+class="form-control" 
+[(ngModel)]="serverName">
+
+<p>{{ serverName }} </p>
+
+
+<div class="inline"><button class="btn btn-primary" [disabled] = "!allowButton || serverStatus"(click) = "onServerStart()" > Start Server</button>
+
+    <button class="btn btn-primary" [disabled] = "!serverStatus" (click) = "onServerEnd()" style="background-color: red">End Server</button>
+</div>
+
+<p [ngStyle]="{backgroundColor:getColor()}">Server Status: {{ serverStatus }}</p>
+<p [ngStyle]="{backgroundCOlor:getColor()}">Server Status: {{ serverStatus }}</p>
+
+<p>{{serverStatus}}</p>
+
+
+

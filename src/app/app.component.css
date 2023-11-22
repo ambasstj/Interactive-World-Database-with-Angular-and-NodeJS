@@ -1,0 +1,15 @@
+div{
+    padding: 20px;
+}
+.inline{
+    display: inline;
+}
+button{
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 50px;
+}
+.white-text{
+    color:white;
+}

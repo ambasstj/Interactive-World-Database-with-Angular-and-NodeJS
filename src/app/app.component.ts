@@ -6,6 +6,36 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Angular Practice';
-  name = 'T-Breezeh';
+  inputValue = 'T-Breezeh';
+  isEmpty = true;
+  username = "";
+  usernameSet=false;
+  showDisplay = true;
+  outPutArray = [];
+
+
+  inputAction(event:any){
+this.isEmpty=false;
+this.username = event.target.value;
+if (this.username == ""){
+  this.isEmpty = true;
+}
+}
+toggleDisplay(event: any){
+  console.log(event)
+  this.outPutArray.push(new Date());
+this.showDisplay = !this.showDisplay;
+}
+resetUsername(){
+  this.username = ""
+  this.isEmpty = true
+}
+setUsername(){
+  this.usernameSet=true;
+}
+onEventAction(event: any){
+this.inputValue = event.target.value;
+}
+
+
 }

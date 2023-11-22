@@ -1,3 +1,52 @@
-<h2>This is a good time to refresh my skills i guess.</h2>
-<hr>
-<app-server></app-server>
+<div>
+  <h2>This is defined in the app compononent.html file</h2>
+  
+  <hr>
+  <app-server></app-server>
+  <hr>
+  
+
+  <input 
+  type="text" 
+  class="form-control"
+  [(ngModel)]="username"
+  (input)="inputAction($event)">
+
+
+  <p *ngIf="usernameSet">Your username is {{username}}.</p>
+
+  <div class="inline">
+    <button
+    class="btn btn-primary"
+    [disabled] = "isEmpty"
+    (click) = "resetUsername()"
+    >Reset username</button>
+
+    <button
+    class="btn btn-primary"
+    [disabled] = "isEmpty"
+    (click) = "setUsername()"
+    style="background-color:greenyellow; color:black"
+    >Set username</button>
+  </div>
+
+  <app-warning-alert></app-warning-alert>
+  <success-alert></success-alert>
+
+
+  <button 
+  (click)="toggleDisplay($event)"
+  >Display Details</button>
+
+  <p *ngIf="showDisplay">Secret Password = Tuna </p>
+
+  <p *ngFor="let value of outPutArray" 
+  [ngStyle]="{backgroundColor: value > 4 ? 'blue': 'clear'}"
+  [ngClass]="{'white-text': value > 4}"
+
+  >{{value}}</p>
+
+  <p
+  *ngIf="outPutArray.length > 10"> {{outPutArray}}</p>
+
+</div>
